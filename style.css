@@ -1,0 +1,398 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root{
+    --main-text-color: #292929;
+    --main-bg-color: #E5E5E5;
+    --full-bg-color: #E8EFF9;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--main-text-color);
+    background-color: var(--full-bg-color);
+    font-size: 16px;
+    line-height: 140%;
+}
+
+/* #region header */
+
+.header {
+    padding: 64px 120px;
+    background: url(./images/header-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+}
+.header__title {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -1.5px;
+    margin-top: 40px;
+}
+
+
+@media (max-width: 1024px) {
+    .header  {
+        padding: 64px 72px;
+        background-position: center;
+        background: url(./images/header-bg-small.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .header__title{
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header  {
+        padding: 32px 20px;
+        
+    }
+    .header__title{
+        font-size: 32px;
+    }
+}
+
+
+.menu{
+    padding: 64px 120px;
+    height: 100vh;
+    background: var(--main-bg-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.menu:target {
+ transform: translateX(0);
+}
+
+.menu__images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.nav__link {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 1024px) {
+    .header  {
+        padding: 64px 72px;
+        background-position: center;
+        background: url(./images/header-bg-small.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .header__title{
+        font-size: 48px;
+    }
+    .menu{
+        padding: 64px 72px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header  {
+        padding: 32px 20px;
+        
+    }
+    .header__title{
+        font-size: 32px;
+    }
+    .menu{
+        padding: 32px 20px;
+    }
+    .sound-waves {
+        width: 32px;
+    }
+}
+
+/* #region header */
+
+
+
+.main {
+    padding: 120px;
+    background: var(--full-bg-color);
+}
+
+/* recommended start */
+
+.recommended{
+    margin-bottom: 120px;
+}
+
+.recomended__title,
+.categories__title {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: -1.5px;
+    color: var(--main-text-color);
+    margin-bottom: 64px;
+}
+
+
+.recommended__products {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 120px 72px;
+    }
+    .recommended__products {
+        flex-direction: column;
+        align-items: center;
+    }
+    .recomended__title,
+    .categories__title {
+       font-size: 40px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .main {
+        padding: 120px 20px;
+    }
+    .recommended__products {
+        align-items: stretch;
+    }
+    .recomended__title,
+    .categories__title {
+       font-size: 32px; 
+    }
+}
+
+
+
+.product {
+    flex-basis: 324px;
+}
+.product__img {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.product__title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.product__category {
+    margin-bottom: 12px;
+}
+
+.product__price,
+.product__title  {
+    font-weight: bold;
+}
+
+/* recommended end */
+
+
+/* categories start */
+
+.categories-items {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+}
+
+.category__imgs {
+    display: flex;
+    gap: 3%;
+    max-width: 1020px;
+
+}
+
+
+.category__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    margin-top: 16px;
+}
+
+.categories {  
+    max-width: 1020px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+}
+
+.category__img-wide {
+    width: 65%;
+    object-fit: cover;
+}
+
+.category__img-square{
+    width: 32%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 576px) {
+    .category__img-wide {
+        width: 48.5%;
+    }
+
+    .category__img-square{
+        width: 48.5%;
+    }
+
+    .category__title {
+        font-size: 16px;
+    }
+}
+
+/* categories end */
+
+
+/* how-to-buy start */
+
+.how-to-buy { 
+        flex-basis: 50%;
+        display: flex;
+        max-width: 1020px;
+          margin: 0 auto;
+}
+
+.how-to-buy__title {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1.5px;
+    color: var(--main-text-color);
+    flex-basis: 50%;
+}
+
+.how-to-buy__content {
+    gap: 24px;
+    flex-basis: 50%;
+}
+
+.how-to-buy__benefits {
+    
+    list-style: none;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    .how-to-buy__title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .how-to-buy { 
+        display: block;
+    }
+    .how-to-buy__title {
+        margin-bottom: 32px;
+        font-size: 32px;
+}
+    
+}
+
+/* how-to-buy end */
+
+/* main end */
+
+.footer{
+    background: url(./images/footer-img.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 460px; 
+    position: sticky;
+    bottom: 0;
+    z-index: -1;
+}
+
+
+.logo {
+    height: 24px;
+}
+
+
+@media (max-width: 576px) {
+    .logo {
+        height: 16px;
+    }
+}
